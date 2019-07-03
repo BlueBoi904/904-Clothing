@@ -5,6 +5,7 @@ import './App.css';
 import HomePage from './pages/homepage/home.component'
 import ShopPage from './pages/shop/shop.component.jsx';
 import Header from './components/header/header.component.jsx'
+import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.jsx'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <Switch>
       <Route exact path='/' component={HomePage} />
       <Route path='/shop' component={ShopPage} />
+      <Route path='/signin' component={SignInAndSignUpPage} />
     </Switch>
     </div>
     // Component: Component we want to render. Path: When URL is at the base '/' render homepage. 
@@ -25,3 +27,5 @@ function App() {
 export default App;
 
 // To include sass: yarn add node-sass
+
+// Try to keep state at the lowest possible levels to avoid rerendering pages that do not require it
