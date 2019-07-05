@@ -22,9 +22,25 @@ class App extends React.Component {
   // Firebase keeps track that the current user is signed in even if a page refresh happens
   // This is an open subscription which we must close when the user logs out to prvent memory leaks
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
-      createUserProfileDocument(user);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+    if (userAuth) {
+      const userRef = await createUserProfileDocument(userAuth);
 
+      userRef.onSnapshot(snapShot => {
+        this.setState({
+          currentUser: {
+            id: snapShot.id,
+            ...snapShot.data()
+            // Creating a new object that has all of the properties of our snapshot we want, as well as our unique id
+          }
+        }, () =>{
+          console.log(this.state);
+          //Pass a second param function (callback) in order to make sure state has been set before we check it in the
+          // console
+        })
+      });
+    }
+    this.setState({currentUser: userAuth});
       //console.log(user) to see the presisting user object provided by firebase
     })
   }
@@ -33,7 +49,7 @@ class App extends React.Component {
     this.unsubscribeFromAuth();
   }
 
-  render ( ) {
+  render () {
     return (
       <div>
       <Header currentUser={this.state.currentUser} />
