@@ -1,18 +1,11 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import { firebaseConfig } from '../config/firebaseConfig';
 // Import firebase
 
 // Copy firebase config object 
-const firebaseConfig = {
-    apiKey: "AIzaSyCP8cfAp8fvvOeCOZ3wHsf5YMX_5D_NUt0",
-    authDomain: "store-database-14ba9.firebaseapp.com",
-    databaseURL: "https://store-database-14ba9.firebaseio.com",
-    projectId: "store-database-14ba9",
-    storageBucket: "",
-    messagingSenderId: "1057817012430",
-    appId: "1:1057817012430:web:fc5b173b4996689f"
-  };
+
 
   // We want to write a function that allows us to take that userAuth obj, and store it inside of our database
   /*

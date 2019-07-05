@@ -34,7 +34,7 @@ class App extends React.Component {
             // Creating a new object that has all of the properties of our snapshot we want, as well as our unique id
           }
         }, () =>{
-          console.log(this.state);
+          // console.log(this.state);
           //Pass a second param function (callback) in order to make sure state has been set before we check it in the
           // console
         })
