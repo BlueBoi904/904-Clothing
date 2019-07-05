@@ -6,7 +6,7 @@ import HomePage from './pages/homepage/home.component'
 import ShopPage from './pages/shop/shop.component.jsx';
 import Header from './components/header/header.component.jsx'
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.jsx'
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument} from './firebase/firebase.utils';
 class App extends React.Component {
   constructor(){
     super();
@@ -22,8 +22,8 @@ class App extends React.Component {
   // Firebase keeps track that the current user is signed in even if a page refresh happens
   // This is an open subscription which we must close when the user logs out to prvent memory leaks
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({currentUser: user});
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      createUserProfileDocument(user);
 
       //console.log(user) to see the presisting user object provided by firebase
     })
