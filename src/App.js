@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 
 //Hello
+//Another comment 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
