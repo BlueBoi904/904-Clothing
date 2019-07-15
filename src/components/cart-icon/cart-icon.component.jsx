@@ -6,6 +6,7 @@ import {ReactComponent as ShoppingIcon} from '../../assets/shopping-bag.svg'
 
 import './cart-icon.styles.scss';
 
+import {selectCartItemsCount} from '../../redux/cart/cart.selectors'
 const CartIcon = ({toggleCartHidden, itemCount}) => (
     <div className='cart-icon' onClick={toggleCartHidden}>
         <ShoppingIcon  className ='shopping-icon' />
@@ -18,8 +19,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 // Use mapStateToProps and the reduce() function to sum cart items and display on cart icon
-const mapStateToProps = ({cart: {cartItems}}) => ({
-    itemCount: cartItems.reduce((acc,cartItem) => acc + cartItem.quantity, 0)
+const mapStateToProps = state => ({
+    itemCount: selectCartItemsCount(state)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
