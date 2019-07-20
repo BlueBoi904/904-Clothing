@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect';
+import { createSelector } from "reselect";
 
 // 2 types of selectors we could write.
 
@@ -10,18 +10,27 @@ import { createSelector } from 'reselect';
 const selectCart = state => state.cart;
 
 export const selectCartItems = createSelector(
-    // Collection of input selectors
-    [selectCart],
-    // Function which it's params are the return of collection input selectors in the same order
-    (cart) => cart.cartItems
+  // Collection of input selectors
+  [selectCart],
+  // Function which it's params are the return of collection input selectors in the same order
+  cart => cart.cartItems
 );
 
 export const selectCartHidden = createSelector(
-    [selectCart],
-    cart => cart.hidden
-)
+  [selectCart],
+  cart => cart.hidden
+);
 
 export const selectCartItemsCount = createSelector(
-    [selectCartItems],
-    cartItems => cartItems.reduce((acc,cartItem) => acc + cartItem.quantity, 0)
+  [selectCartItems],
+  cartItems => cartItems.reduce((acc, cartItem) => acc + cartItem.quantity, 0)
+);
+
+export const selectCartTotal = createSelector(
+  [selectCartItems],
+  cartItems =>
+    cartItems.reduce(
+      (acc, cartItem) => acc + cartItem.quantity * cartItem.price,
+      0
+    )
 );
