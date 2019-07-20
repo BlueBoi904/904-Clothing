@@ -9,4 +9,12 @@ export const addItem = item => ({
   payload: item
 });
 
+
 // Add items function gets the item, and generates a new action with the action type of ADD_ITEM.
+
+// Add new action that will dispatch CLEAR_ITEM_FROM_CART
+
+export const clearItemFromCart = item => ({
+  type: CartActionTypes.CLEAR_ITEM_FROM_CART,
+  payload: item
+})
