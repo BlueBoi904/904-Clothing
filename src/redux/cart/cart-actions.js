@@ -9,6 +9,10 @@ export const addItem = item => ({
   payload: item
 });
 
+export const removeItem = item => ({
+  type: CartActionTypes.REMOVE_ITEM,
+  payload: item
+})
 
 // Add items function gets the item, and generates a new action with the action type of ADD_ITEM.
 
