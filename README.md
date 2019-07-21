@@ -1,1 +1,1 @@
-Firebase config hidden in git ignore, create your own firebase config in order to run this app.
+Live test app here: https://react-web-store.herokuapp.com/
