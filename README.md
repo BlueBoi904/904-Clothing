@@ -1,4 +1,4 @@
-# React-Web-Store(Crown Clothing)
+# React-Web-Store
 
 Dynamic web store that allows users to purchase items, add items to a cart, login/logout, and process payments. Built with ReactJS, Redux, Firebase/Firestore, and Stripe to process user transactions.
 
