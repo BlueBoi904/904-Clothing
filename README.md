@@ -12,7 +12,7 @@ Dynamic web store app that allows users to purchase items, add items to a cart, 
 
 # What I've Learned
 
-- Advanced Redux patterns (Selectors, State Normalisation)
+- Advanced Redux patterns (Selectors, Memoization)
 - Use of Higher Order Components (HOC) in ReactJS
 - Session Storage/Persistence
 - Proper practices such as developing components that are reusable, and learning where to handle App's state.
