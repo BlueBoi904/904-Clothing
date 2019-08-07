@@ -1,23 +1,21 @@
-// “We have two lives, and the second begins when we realize we only have one.”
-import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import './App.css';
+import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import "./App.css";
 // Pages
-import HomePage from './pages/homepage/home.component'
-import ShopPage from './pages/shop/shop.component.jsx';
-import CheckoufPage from './pages/checkout/checkout.component'
-import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.jsx'
+import HomePage from "./pages/homepage/home.component";
+import ShopPage from "./pages/shop/shop.component.jsx";
+import CheckoufPage from "./pages/checkout/checkout.component";
+import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.jsx";
 
-import Header from './components/header/header.component.jsx'
-import { auth, createUserProfileDocument} from './firebase/firebase.utils';
-import { connect } from 'react-redux';
-import { setCurrentUser } from './redux/user/user.actions';
-import { selectCurrentUser } from './redux/user/user.selectors';
-import { createStructuredSelector } from 'reselect';
-
+import Header from "./components/header/header.component.jsx";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { connect } from "react-redux";
+import { setCurrentUser } from "./redux/user/user.actions";
+import { selectCurrentUser } from "./redux/user/user.selectors";
+import { createStructuredSelector } from "reselect";
 
 //Hello
-//Another comment 
+//Another comment
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
@@ -44,18 +42,28 @@ class App extends React.Component {
     this.unsubscribeFromAuth();
   }
 
-  render () {
+  render() {
     return (
       <div>
-      <Header />
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route path='/shop' component={ShopPage} />
-        <Route exact path='/checkout' component={CheckoufPage} />
-        <Route exact path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)}/>
-      </Switch>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/shop" component={ShopPage} />
+          <Route exact path="/checkout" component={CheckoufPage} />
+          <Route
+            exact
+            path="/signin"
+            render={() =>
+              this.props.currentUser ? (
+                <Redirect to="/" />
+              ) : (
+                <SignInAndSignUpPage />
+              )
+            }
+          />
+        </Switch>
       </div>
-      // Component: Component we want to render. Path: When URL is at the base '/' render homepage. 
+      // Component: Component we want to render. Path: When URL is at the base '/' render homepage.
       // Exact is a bool property. It means path must be exatly '/' for homepage to render
       // Switch will not render anything else after first path match
     );
@@ -64,17 +72,17 @@ class App extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   // Dispatch is a way for redux to know that whatever obj your are passing me
   //is going to be a action object that's going to be passed to every reducer
   setCurrentUser: user => dispatch(setCurrentUser(user))
-})
+});
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-  )(App);
+)(App);
 
 // To include sass: yarn add node-sass
 
