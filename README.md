@@ -17,9 +17,13 @@ Dynamic web store app that allows users to purchase items, add items to a cart, 
 - Session Storage/Persistence
 - Proper practices such as developing components that are reusable, and learning where to handle App's state.
 
-# Example
+# Images
 
-<a href="//imgur.com/a/IrpnyX8"><img src="https://imgur.com/LKuDjLA" /></a>
+<img src='Images/main_view.png' heigth='500'>
+
+<img src='Images/womens.png' heigth='500'>
+
+<img src='Images/checkout' heigth='500'>
 
 # Test App Live
 
