@@ -19,9 +19,7 @@ Dynamic web store app that allows users to purchase items, add items to a cart, 
 
 # Example
 
-<!-- <a href="https://imgflip.com/gif/37x0rl"><img src="https://imgur.com/LKuDjLA" title="made at imgflip.com"/></a> -->
-
-<a href="//imgur.com/a/IrpnyX8"></a>
+<a href="//imgur.com/a/IrpnyX8"><img src="https://imgur.com/LKuDjLA" /></a>
 
 # Test App Live
 
