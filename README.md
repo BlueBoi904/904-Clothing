@@ -17,6 +17,10 @@ Dynamic web store app that allows users to purchase items, add items to a cart, 
 - Session Storage/Persistence
 - Proper practices such as developing components that are reusable, and learning where to handle App's state.
 
+# Example
+
+<a href="https://imgflip.com/gif/37x0rl"><img src="https://i.imgflip.com/37x0rl.gif" title="made at imgflip.com"/></a>
+
 # Test App Live
 
 Test for yourself here: https://react-web-store.herokuapp.com/
