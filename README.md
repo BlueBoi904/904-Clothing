@@ -23,7 +23,7 @@ Dynamic web store app that allows users to purchase items, add items to a cart, 
 
 <img src='Images/womens.png' heigth='500'>
 
-<img src='Images/checkout' heigth='500'>
+<img src='Images/checkout.png' heigth='500'>
 
 # Test App Live
 
