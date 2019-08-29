@@ -1,4 +1,4 @@
-# Crown-Clothing
+# 904 Clothing
 
 Dynamic web store app that allows users to purchase items, add items to a cart, login/logout, and process payments.
 
